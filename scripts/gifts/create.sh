@@ -1,4 +1,4 @@
-curl --include --request POST "localhost:7165/gifts" \
+curl --include --request POST "localhost:4741/gifts" \
 --header "Content-Type: application/json" \
 --data '{
 "gift": {
@@ -6,6 +6,6 @@ curl --include --request POST "localhost:7165/gifts" \
   "category": "'"${CATEGORY}"'",
   "price": "'"${PRICE}"'",
   "where_to_find": "'"${WHERE_TO_FIND}"'",
-  "relationship_status": "'"${RELATIONSHIP_STATUS}"'",
+  "relationship_status": "'"${RELATIONSHIP_STATUS}"'"
 }
 }'
