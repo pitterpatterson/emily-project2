@@ -1,4 +1,4 @@
-class GiftsController < ApplicationController
+class GiftsController < OpenReadController
   before_action :set_gift, only: [:show, :update, :destroy]
 
   # GET /gifts
