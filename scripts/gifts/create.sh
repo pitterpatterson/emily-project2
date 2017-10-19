@@ -6,6 +6,7 @@ curl --include --request POST "localhost:4741/gifts" \
   "category": "'"${CATEGORY}"'",
   "price": "'"${PRICE}"'",
   "where_to_find": "'"${WHERE_TO_FIND}"'",
-  "relationship_status": "'"${RELATIONSHIP_STATUS}"'"
+  "relationship_status": "'"${RELATIONSHIP_STATUS}"'",
+  "notes": "'"${NOTES}"'"
 }
 }'
