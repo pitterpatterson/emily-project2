@@ -15,7 +15,7 @@ class GiftsController < OpenReadController
 
   # POST /gifts
   def create
-    @gift = current_user.gift.build(gift_params)
+    @gift = current_user.gifts.build(gift_params)
 
     if @gift.save
       render json: @gift, status: :created, location: @gift
@@ -41,7 +41,7 @@ class GiftsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_gift
-      @gift = current_user.gift.find(params[:id])
+      @gift = current_user.gifts.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

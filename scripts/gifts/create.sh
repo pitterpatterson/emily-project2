@@ -1,5 +1,6 @@
 curl --include --request POST "localhost:4741/gifts" \
 --header "Content-Type: application/json" \
+--header "Authorization: Token token=$TOKEN" \
 --data '{
 "gift": {
   "name": "'"${NAME}"'",
