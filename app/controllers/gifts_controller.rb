@@ -1,5 +1,6 @@
 class GiftsController < OpenReadController
-  before_action :set_gift, only: [:show, :update, :destroy]
+  before_action :set_gift, only: [:show]
+  before_action :set_user_gift, only: [:update, :destroy]
 
   # GET /gifts
   def index
@@ -41,6 +42,10 @@ class GiftsController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_gift
+      @gift = Gift.find(params[:id])
+    end
+
+    def set_user_gift
       @gift = current_user.gifts.find(params[:id])
     end
 
