@@ -51,6 +51,6 @@ class GiftsController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def gift_params
-      params.require(:gift).permit(:name, :category, :price, :where_to_find, :relationship_status)
+      params.require(:gift).permit(:name, :price, :where_to_find, :notes)
     end
 end
