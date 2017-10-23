@@ -1,10 +1,10 @@
-class GiftsController < OpenReadController
-  before_action :set_gift, only: [:show]
-  before_action :set_user_gift, only: [:update, :destroy]
+class GiftsController < ProtectedController
+  # before_action :set_gift, only: [:show]
+  before_action :set_user_gift, only: %i[show update destroy]
 
   # GET /gifts
   def index
-    @gifts = Gift.all
+    @gifts = current_user.gifts.all
 
     render json: @gifts
   end
@@ -40,17 +40,18 @@ class GiftsController < OpenReadController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gift
-      @gift = Gift.find(params[:id])
-    end
 
-    def set_user_gift
-      @gift = current_user.gifts.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gift
+    @gift = Gift.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def gift_params
-      params.require(:gift).permit(:name, :price, :where_to_find, :notes)
-    end
+  def set_user_gift
+    @gift = current_user.gifts.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def gift_params
+    params.require(:gift).permit(:name, :price, :where_to_find, :notes)
+  end
 end
