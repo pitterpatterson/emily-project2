@@ -1,10 +1,10 @@
-class GiftsController < OpenReadController
-  before_action :set_gift, only: [:show]
-  before_action :set_user_gift, only: %i[update destroy]
+class GiftsController < ProtectedController
+  # before_action :set_gift, only: [:show]
+  before_action :set_user_gift, only: %i[show update destroy]
 
   # GET /gifts
   def index
-    @gifts = Gift.all
+    @gifts = current_user.gifts.all
 
     render json: @gifts
   end
