@@ -19,10 +19,10 @@ Each of the actions a user takes on their list (view, add, edit, delete) is comp
 Users have a one-to-many relationship with gifts.
 
 ## Technologies Used
-ruby
-rails
-ajax
-heroku
+* ruby
+* rails
+* ajax
+* heroku
 
 ## Unsolved Issues
 There are currently no unsolved issues with the backend of the application.
